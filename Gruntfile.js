@@ -79,20 +79,19 @@ module.exports = function (grunt) {
     less: {
       dev: {
         options: {
-          paths      : ['public/stylesheets'],
-          yuicompress: 'false'
+          paths    : ['public/stylesheets']
         },
         files: {
-          'public/dist/app.min.css': ['public/vendor/bootstrap/less/bootstrap.less', 'public/stylesheets/**/*.less']
+          'public/dist/app.min.css': ['public/stylesheets/**/*.less']
         }
       },
       dist: {
         options: {
-          paths      : ['public/stylesheets'],
-          yuicompress: 'true'
+          paths    : ['public/stylesheets'],
+          cleancss : true
         },
         files  : {
-          'public/dist/app.min.css': ['public/vendor/bootstrap/less/bootstrap.less', 'public/stylesheets/**/*.less']
+          'public/dist/app.min.css': ['public/stylesheets/**/*.less']
         }
       }
     }
