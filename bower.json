@@ -1,10 +1,10 @@
 {
-  "name": "ember-browserify-grunt",
+  "name": "super_simple_blog",
   "version": "0.0.1",
   "authors": [
     "Ray H.J Kwon <nicekhj@gmail.com>"
   ],
-  "description": "ember-browserify-grunt",
+  "description": "super_simple_blog",
   "license": "MIT",
   "private": true,
   "dependencies": {

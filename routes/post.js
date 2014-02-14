@@ -44,9 +44,7 @@ exports.addPost = function(req, res) {
 };
 
 exports.deletePost = function(req, res) {
-  console.log(req.params.post_id);
   _.remove(posts, function(post){ return post.id == req.params.post_id; });
-  console.log(posts);
 
   res.send(200);
 };

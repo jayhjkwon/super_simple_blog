@@ -103,6 +103,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('dev_watch', ['emberTemplates:dev', 'uglify:vendor', 'uglify:dev', 'less:dev', 'watch']);
-  grunt.registerTask('dev_build', ['emberTemplates:dev', 'uglify:vendor', 'uglify:dev', 'less:dev']);
   grunt.registerTask('dist_build', ['emberTemplates:dist', 'uglify:vendor', 'uglify:dist', 'less:dist']);
 };

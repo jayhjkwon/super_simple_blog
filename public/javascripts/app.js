@@ -8,12 +8,6 @@ App.Router.map(function(){
   });
 });
 
-App.IndexRoute = Ember.Route.extend({
-  redirect: function(){
-    this.transitionTo('posts');
-  }
-})
-
 App.PostsRoute = Ember.Route.extend({
   model: function () {
     return $.getJSON('/api/posts');
