@@ -1,4 +1,4 @@
 node_modules
 azure.err
 *.publishsettings
-public/vendor
+vendor
