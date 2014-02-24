@@ -48,3 +48,14 @@ exports.deletePost = function(req, res) {
 
   res.send(200);
 };
+
+/* --> start : fallback for users without javascript */
+exports.renderPosts = function(req, res) {
+  res.render('index', {posts:posts, post:null});
+};
+
+exports.renderPost = function(req, res) {
+  var post = _.find(posts, function(post) { return post.id == req.params.post_id; });
+  res.render('index', {posts: null, post:post});
+};
+/* <-- end : fallback for users without javascript */
