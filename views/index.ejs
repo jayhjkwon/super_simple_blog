@@ -6,20 +6,7 @@
     <link rel='stylesheet' href='/dist/app.min.css' />
   </head>
   <body>
-    <noscript>
-      <% if (posts) { %>
-        <ul>
-          <% for(var i=0; i<posts.length; i++) {%>
-             <li><a href="/posts/<%= posts[i].id %>"><%= posts[i].title %></a></li>
-          <% } %>
-        </ul>
-      <% } %>
-
-      <% if (post) { %>
-        <h1><%= post.title %></h1>
-        <div><%= post.contents %></div>
-      <% } %>
-    </noscript>
+    
     <script src="/dist/vendor.min.js"></script>      
     <script src="/dist/app.min.js"></script>      
     <script src="/dist/templates.js"></script>      
