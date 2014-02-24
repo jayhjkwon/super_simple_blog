@@ -3,6 +3,7 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var post = require('./routes/post');
+var sm = require('sitemap');
 
 var app = express();
 
@@ -42,6 +43,24 @@ app.get('/posts/:post_id', routes.index);
 app.get('/posts/edit/:post_id', routes.index);
 app.get('/posts/new', routes.index);
 /* <-- end : fallback for users without javascript */
+
+app.get('/sitemap.xml', function(req, res) {
+  var fullURL = req.protocol + "://" + req.get('host');// + req.url + ':' + app.get('port');
+
+  var sitemap = sm.createSitemap ({
+    hostname: fullURL,  // 'http://localhost:3000',
+    cacheTime: 600000,        // 600 sec - cache purge period
+    urls: [
+      { url: '',  changefreq: 'daily'},
+      { url: '/posts',  changefreq: 'daily'}
+    ]
+  });
+
+  sitemap.toXML( function (xml) {
+      res.header('Content-Type', 'application/xml');
+      res.send( xml );
+  });
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
