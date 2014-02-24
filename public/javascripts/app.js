@@ -1,5 +1,9 @@
 var App = App || Ember.Application.create();
 
+App.Router.reopen({
+  location: 'history'
+});
+
 App.Router.map(function(){
   this.resource('posts', function(){
     this.route('detail', { path: '/:post_id' });
