@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://super-simple-blog.azurewebsites.net/sitemap.xml
