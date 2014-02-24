@@ -35,8 +35,8 @@ app.post('/api/posts', post.addPost);
 app.delete('/api/posts/:post_id', post.deletePost);
 
 /* --> start : fallback for users without javascript */
-// app.get('/posts', post.renderPosts);
-// app.get('/posts/:post_id', post.renderPost);
+app.get('/posts', post.renderPosts);
+app.get('/posts/:post_id', post.renderPost);
 app.get('/posts', routes.index);
 app.get('/posts/:post_id', routes.index);
 app.get('/posts/edit/:post_id', routes.index);
