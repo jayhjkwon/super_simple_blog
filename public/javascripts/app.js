@@ -1,8 +1,10 @@
 var App = App || Ember.Application.create();
 
-App.Router.reopen({
-  location: 'history'
-});
+if (window.history && window.history.pushState) {
+    App.Router.reopen({
+      location: 'history'
+    });
+}
 
 App.Router.map(function(){
   this.resource('posts', function(){
